@@ -7,9 +7,9 @@
 " Init pathogen plugin management
 call pathogen#infect() 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" GENERAL                                                                      "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" GENERAL                                                                     "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = "_"
 set clipboard=unnamed " OSX Clipboard compatibility
 set nocompatible " Do not try to be compatible with vi
@@ -26,10 +26,11 @@ set wildmode=list:longest
 set nofoldenable
 set backspace=indent,eol,start " Upgraded backspace
 set gdefault " Assume /g when doing :%s
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" USER INTERFACE                                                               "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" USER INTERFACE                                                              "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on
+set colorcolumn=79
 let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
@@ -47,9 +48,9 @@ set showmatch " Jump to matching bracket
 set matchtime=2 " stay for 2 seconds
 set showtabline=2 " Always show tabline
 hi StatusLine ctermfg=blue ctermbg=yellow
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" OMNICOMPLETE, SYNTAX SPECIFIC                                                "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" OMNICOMPLETE, SYNTAX SPECIFIC                                               "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 au BufRead,BufNewFile *.php set filetype=php.html
 
 " Omnicomplete setup
@@ -68,9 +69,9 @@ let php_htmlInStrings = 1 "for HTML syntax highlighting inside strings
 
 " Omnicomplete prefers longest match first
 set completeopt=menu,menuone,preview,longest
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" PLUGINS                                                                      "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" PLUGINS                                                                     "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree plugin
 let NERDTreeChDirMode=1
 let NERDTreeQuitOnOpen=1
@@ -83,13 +84,13 @@ let NERDTreeShowHidden=1
 let g:SuperTabDefaultCompletionType = "<c-p>"
 
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki'}]
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" MAPPINGS                                                                     "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" MAPPINGS                                                                    "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <F1> :NERDTreeToggle<cr>
 map K <Nop>
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" MISC                                                                         "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" MISC                                                                        "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Close scratch window
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
