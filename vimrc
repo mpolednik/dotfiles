@@ -1,7 +1,8 @@
 " Sources
 " https://github.com/lucasoman/Conf/blob/master/.vimrc
 " http://vi-improved.org/vimrc.php
-" http://www.thegeekstuff.com/2009/04/ctags-taglist-vi-vim-editor-as-sourece-code-browser/
+" http://www.thegeekstuff.com/2009/04/ctags-taglist-vi-vim-editor-as-sourece-
+" code-browser/
 " https://github.com/gammons/dotfiles/blob/master/vimrc
 
 " Init pathogen plugin management
@@ -15,7 +16,8 @@ set clipboard=unnamed " OSX Clipboard compatibility
 set nocompatible " Do not try to be compatible with vi
 set encoding=utf-8
 set noacd " Do not cd to directory of file
-set ignorecase smartcase " Search ignores case if everything is lowercase, use case-sensitive matching otherwise
+set ignorecase smartcase " Search ignores case if everything is lowercase, use
+" case-sensitive matching otherwise
 set expandtab " Only visual tabs
 set shiftwidth=4
 set softtabstop=4
