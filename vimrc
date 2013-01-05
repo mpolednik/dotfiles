@@ -14,7 +14,6 @@ call pathogen#infect()
 let mapleader = "_"
 set clipboard=unnamed " OSX Clipboard compatibility
 set nocompatible " Do not try to be compatible with vi
-set encoding=utf-8
 set noacd " Do not cd to directory of file
 set ignorecase smartcase " Search ignores case if everything is 
 " lowercase, use  case-sensitive matching otherwise
