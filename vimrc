@@ -33,6 +33,7 @@ set gdefault " Assume /g when doing :%s
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on
 set colorcolumn=72,79
+set tw=79
 let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
