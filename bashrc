@@ -1,29 +1,20 @@
-#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-# GENERAL                                                                      "
-#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-# Autocorrect directory names
 shopt -s cdspell
 
 export EDITOR='vim'
+export PAGER='less'
 
-# VI Prompt
 set -o vi
-#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-# PROMPT                                                                       "
-#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if [ ! -n "$SSH_TTY" ]; then
 	PS1='\[\e[0;32m\]\u\e[0;34m@\[\e[0;31m\]\h\[\e[m\]:\W\$\[\e[0m\] '
 else
 	PS1='\[\e[0;32m\]\u\e[0;34m@\[\e[0;31m\]\h\[\e[1;36m\](SSH)\[\e[m\]:\W\$\[\e[0m\] '
 fi
-#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-# ALIASSES                                                                     "
-#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 alias l="/bin/ls -FG"
 alias ls="/bin/ls -laFG"
-alias c="cd"
-alias v="vim"
-#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-# PATH                                                                         "
-#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-export PATH="/usr/local/bin:$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin"
+
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/mysql/bin"
+
+ if [ -f `brew --prefix`/etc/bash_completion ]; then
+    . `brew --prefix`/etc/bash_completion
+  fi
