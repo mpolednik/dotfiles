@@ -1,4 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/Users/mpolednik/Sites/test/app'
-let g:netrw_dirhist_2='/Users/mpolednik/Sites/maturita/modules/views'
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Users/mpolednik/Git/maturita/modules/controllers'
+let g:netrw_dirhist_2='/Users/mpolednik/Git/maturita/modules'
+let g:netrw_dirhist_3='/Users/mpolednik/Git/maturita/modules/localization'
+let g:netrw_dirhist_4='/Users/mpolednik/Git/maturita/.git'
+let g:netrw_dirhist_5='/Users/mpolednik/Git/maturita/app'
+let g:netrw_dirhist_6='/Users/mpolednik/Git/maturita/app/controllers'
+let g:netrw_dirhist_7='/Users/mpolednik/Git/maturita/app/hooks.py'
+let g:netrw_dirhist_8='/usr/local/Library/Homebrew/pkgconfig'
