@@ -33,8 +33,8 @@ set gdefault " Assume /g when doing :%s
 syntax on
 set colorcolumn=72,79
 let g:solarized_termcolors=256
-set background=dark
-colorscheme pyte
+set background=light
+colorscheme zellner
 filetype plugin indent on " Filetype indentation 
 set nostartofline " Persistant cursor position
 set laststatus=2 " Always display status line
