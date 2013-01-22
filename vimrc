@@ -48,7 +48,10 @@ set statusline=%F%m%r%h%w\ [%L]\ [%p%%]\ [%l,%v]
 set showmatch " Jump to matching bracket
 set matchtime=2 " stay for 2 seconds
 set showtabline=2 " Always show tabline
-hi StatusLine ctermfg=blue ctermbg=yellow
+hi StatusLine ctermfg=darkgrey ctermbg=black
+hi TabLineFill ctermbg=darkgrey ctermfg=darkgrey
+hi TabLineSel ctermfg=black
+hi TabLine ctermfg=darkgrey
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " OMNICOMPLETE, SYNTAX SPECIFIC                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
