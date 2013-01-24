@@ -1,20 +1,25 @@
-" Sources
-" https://github.com/lucasoman/Conf/blob/master/.vimrc
-" http://vi-improved.org/vimrc.php
-" http://www.thegeekstuff.com/2009/04/ctags-taglist-vi-vim-editor-as-
-" sourece-code-browser/
-" https://github.com/gammons/dotfiles/blob/master/vimrc
+" Bundles
+set nocompatible " Do not try to be compatible with vi
+filetype off
 
-" Init pathogen plugin management
-call pathogen#infect() 
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" GENERAL                                                                     "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+Bundle 'flazz/vim-colorschemes'
+Bundle 'vim-scripts/CSApprox'
+Bundle 'ervandew/supertab'
+Bundle 'gregsexton/MatchTag'
+Bundle 'nvie/vim-flake8'
+Bundle 'hynek/vim-python-pep8-indent'
+Bundle 'tpope/vim-fugitive'
+
+" General
 let mapleader = "_"
 set clipboard=unnamed " OSX Clipboard compatibility
-set nocompatible " Do not try to be compatible with vi
-set noacd " Do not cd to directory of file
 set ignorecase smartcase " Search ignores case if everything is 
 " lowercase, use  case-sensitive matching otherwise
 set expandtab " Only visual tabs
@@ -27,14 +32,11 @@ set wildmode=list:longest
 set nofoldenable
 set backspace=indent,eol,start " Upgraded backspace
 set gdefault " Assume /g when doing :%s
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" USER INTERFACE                                                              "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" UI
 syntax on
-set colorcolumn=72,79
-let g:solarized_termcolors=256
-set background=light
-colorscheme hemisu
+colorscheme github
+set colorcolumn=79
 filetype plugin indent on " Filetype indentation 
 set nostartofline " Persistant cursor position
 set laststatus=2 " Always display status line
@@ -48,12 +50,8 @@ set statusline=%F%m%r%h%w\ [%L]\ [%p%%]\ [%l,%v]
 set showmatch " Jump to matching bracket
 set matchtime=2 " stay for 2 seconds
 set showtabline=2 " Always show tabline
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" OMNICOMPLETE, SYNTAX SPECIFIC                                               "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-au BufRead,BufNewFile *.php set filetype=php.html
 
-" Omnicomplete setup
+" OMNICOMPLETE, SYNTAX SPECIFIC                                               "
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
@@ -62,35 +60,16 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP keywordprg=pman
 autocmd FileType c set omnifunc=ccomplete#Complete
 
-" PHP syntax options
-let php_sql_query = 1 "for SQL syntax highlighting inside strings
-let php_htmlInStrings = 1 "for HTML syntax highlighting inside strings
-
-
 " Omnicomplete prefers longest match first
 set completeopt=menu,menuone,preview,longest
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " PLUGINS                                                                     "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" NERDTree plugin
-let NERDTreeChDirMode=1
-let NERDTreeQuitOnOpen=1
-let NERDTreeShowLineNumbers=1
-let NERDTreeMinimalUI=1
-let NERDTreeDirArrows=1
-let NERDTreeShowHidden=1
-
 " Supertab plugin
-let g:SuperTabDefaultCompletionType = "<c-p>"
+let g:SuperTabDefaultCompletionType = "context"
+autocmd FileType python compiler pylint
 
-let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki'}]
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPPINGS                                                                    "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <F1> :NERDTreeToggle<cr>
-map K <Nop>
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" MISC                                                                        "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Close scratch window
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
