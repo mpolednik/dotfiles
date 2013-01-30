@@ -9,7 +9,7 @@ PS1="\[\e[1m\][\u@\h \W]\\$ \[\e[0m\]"
 alias l="/bin/ls -FG"
 alias ls="/bin/ls -laFG"
 
-export PATH="/usr/local/bin:/usr/local/sbin:$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/mysql/bin"
+export PATH="/usr/local/share/python:/usr/local/bin:/usr/local/sbin:$PATH"
 
  if [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
