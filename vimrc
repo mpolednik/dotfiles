@@ -20,7 +20,6 @@ Bundle 'vim-scripts/pydoc.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'endel/vim-github-colorscheme'
 Bundle 'vim-scripts/CSApprox'
-Bundle 'skammer/vim-css-color'
 
 " General
 let mapleader = "_"
