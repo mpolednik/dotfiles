@@ -18,7 +18,7 @@ Bundle 'sontek/minibufexpl.vim'
 Bundle 'andrewle/vim-autoclose'
 Bundle 'vim-scripts/pydoc.vim'
 Bundle 'scrooloose/syntastic'
-Bundle 'endel/vim-github-colorscheme'
+Bundle 'noahfrederick/Hemisu'
 Bundle 'vim-scripts/CSApprox'
 
 " General
@@ -39,7 +39,8 @@ set gdefault " Assume /g when doing :%s
 
 " UI
 syntax on
-colorscheme github
+colorscheme hemisu
+set background=dark
 set colorcolumn=79
 filetype plugin indent on " Filetype indentation 
 set nostartofline " Persistant cursor position
@@ -78,9 +79,3 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 map <F1> :GundoToggle<cr>
-
-if has("gui_running")
-    set guifont=Menlo:h15
-else
-    colorscheme github-term
-endif
