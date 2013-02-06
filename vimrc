@@ -9,13 +9,8 @@ call vundle#rc()
 " required! 
 Bundle 'gmarik/vundle'
 
-Bundle 'ervandew/supertab'
 Bundle 'gregsexton/MatchTag'
 Bundle 'hynek/vim-python-pep8-indent'
-Bundle 'tpope/vim-fugitive'
-Bundle 'sjl/gundo.vim.git'
-Bundle 'sontek/minibufexpl.vim'
-Bundle 'andrewle/vim-autoclose'
 Bundle 'vim-scripts/pydoc.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'noahfrederick/Hemisu'
