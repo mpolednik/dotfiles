@@ -12,11 +12,11 @@ if [ $# -ne 1 ]; then
     usage
 fi
 
-sudo rsync -av $source/local /usr/local
-rsync -av $source/Library ~/Library
-rsync -av $source/Documents ~/Documents
-rsync -av $source/Dropbox ~/Dropbox
-rsync -av $source/Music ~/Music
-rsync -av $source/Pictures ~/Pictures
-rsync -av $source/ssh ~/.ssh
-rsync -av $source/Workflow ~/Workflow
+sudo rsync -rtuv $source/local /usr/local
+rsync -rtuv $source/Library ~/Library
+rsync -rtuv $source/Documents ~/Documents
+rsync -rtuv $source/Dropbox ~/Dropbox
+rsync -rtuv $source/Music ~/Music
+rsync -rtuv $source/Pictures ~/Pictures
+rsync -rtuv $source/ssh ~/.ssh
+rsync -rtuv $source/Workflow ~/Workflow
