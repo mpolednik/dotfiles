@@ -1,4 +1,5 @@
 #!/bin/bash
+# Author: Martin Polednik
 
 # Disable dashboard
 defaults write com.apple.dashboard mcx-disabled -boolean YES
