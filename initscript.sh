@@ -31,3 +31,6 @@ sudo chflags hidden /Applications/Utilities/Java\ Preferences.app
 sudo chflags hidden /Applications/Utilities/Migration\ Assistant.app
 sudo chflags hidden /Applications/Utilities/RAID\ Utility.app
 sudo chflags hidden /Applications/Utilities/VoiceOver\ Utility.app
+
+# Unhide ~/Library
+chflags nohidden ~/Library
