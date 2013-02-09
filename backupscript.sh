@@ -1,16 +1,20 @@
 #!/bin/bash
 # Author: Martin Polednik
 
-sudo rsync -av /usr/local /Volumes/container/
 
-rsync -av ~/Library /Volumes/container/
-rsync -av ~/Documents /Volumes/container/
-rsync -av ~/Dropbox /Volumes/container/
-rsync -av ~/Music /Volumes/container/
-rsync -av ~/Pictures /Volumes/container/
-rsync -av ~/.ssh /Volumes/container/ssh
-rsync -av ~/Workflow /Volumes/container/
+if [ -d '/Volumes/container' ]; then
+    sudo rsync -av -delete /usr/local /Volumes/container/
+    rsync -av -delete ~/Library /Volumes/container/
+    rsync -av -delete ~/Documents /Volumes/container/
+    rsync -av -delete ~/Dropbox /Volumes/container/
+    rsync -av -delete ~/Music /Volumes/container/
+    rsync -av -delete ~/Pictures /Volumes/container/
+    rsync -av -delete ~/.ssh /Volumes/container/ssh
+    rsync -av -delete ~/Workflow /Volumes/container/
+fi
 
-sudo rsync -av /usr/local /Volumes/Asuna/
-rsync -av ~/Library /Volumes/Asuna/
-rsync -av ~/.ssh /Volumes/Asuna/ssh
+if [ -d '/Volumes/Asuna' ]; then
+    sudo rsync -av -delete /usr/local /Volumes/Asuna/
+    rsync -av -delete ~/Library /Volumes/Asuna/
+    rsync -av -delete ~/.ssh /Volumes/Asuna/ssh
+fi
