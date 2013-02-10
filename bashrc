@@ -6,6 +6,10 @@ export PAGER='less'
 set -o vi
 PS1="\[\e[1m\][\u@\h \W]\\$ \[\e[0m\]"
 
+if [ -n "$SSH_CLIENT" ]; then
+    PS1="(SSH)"$PS1
+fi
+
 alias l="/bin/ls -FG"
 alias ls="/bin/ls -laFG"
 
