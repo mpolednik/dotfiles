@@ -18,5 +18,5 @@ sudo rsync -av $source/Documents ~/
 sudo rsync -av $source/Dropbox ~/
 sudo rsync -av $source/Music/iTunes ~/Music/
 sudo rsync -av $source/Pictures ~/
-sudo rsync -av $source/ssh/ ~/.ssh/
+sudo rsync -av $source/ssh/ ~/.ssh
 sudo rsync -av $source/Workflow ~/
