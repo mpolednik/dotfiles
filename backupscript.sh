@@ -14,7 +14,5 @@ if [ -d '/Volumes/container' ]; then
 fi
 
 if [ -d '/Volumes/Asuna' ]; then
-    sudo rsync -av -delete /usr/local /Volumes/Asuna/
-    rsync -av -delete ~/Library /Volumes/Asuna/
     rsync -av -delete ~/.ssh /Volumes/Asuna/ssh
 fi
