@@ -14,7 +14,6 @@ Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'vim-scripts/pydoc.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'noahfrederick/Hemisu'
-Bundle 'vim-scripts/CSApprox'
 
 " General
 let mapleader = "_"
