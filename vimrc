@@ -11,9 +11,12 @@ Bundle 'gmarik/vundle'
 
 Bundle 'gregsexton/MatchTag'
 Bundle 'hynek/vim-python-pep8-indent'
-Bundle 'vim-scripts/pydoc.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'noahfrederick/Hemisu'
+Bundle 'vim-scripts/VimClojure'
+Bundle 'SirVer/ultisnips'
+Bundle 'vim-scripts/loremipsum'
+Bundle 'ervandew/supertab'
 
 " General
 let mapleader = "_"
@@ -29,7 +32,6 @@ set wildmenu
 set wildmode=list:longest
 set nofoldenable
 set backspace=indent,eol,start " Upgraded backspace
-set gdefault " Assume /g when doing :%s
 
 " UI
 syntax on
@@ -57,19 +59,24 @@ autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP keywordprg=pman
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
+
+let g:vimclojure#ParenRainbow = 1
+let g:vimclojure#HighlightBuiltins = 1
+let g:vimclojure#DynamicHighlighting = 1
 
 " Omnicomplete prefers longest match first
 set completeopt=menu,menuone,preview,longest
 
 " PLUGINS                                                                     "
 " Supertab plugin
-let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType = 'context'
+let g:SuperTabContextDefaultCompletionType = '<c-x><c-o>'
+let g:SuperTabClosePreviewOnPopupClose = 1
 
 " MAPPINGS                                                                    "
 map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
-map <F1> :GundoToggle<cr>
