@@ -3,6 +3,7 @@ set nocompatible " Do not try to be compatible with vi
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
+set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
 call vundle#rc()
 
 " let Vundle manage Vundle
@@ -17,6 +18,10 @@ Bundle 'vim-scripts/VimClojure'
 Bundle 'SirVer/ultisnips'
 Bundle 'vim-scripts/loremipsum'
 Bundle 'ervandew/supertab'
+Bundle 'tpope/vim-fugitive'
+Bundle 'scrooloose/nerdtree'
+Bundle 'majutsushi/tagbar'
+Bundle 'davidhalter/jedi-vim'
 
 " General
 let mapleader = "_"
@@ -59,12 +64,13 @@ autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP keywordprg=pman
 autocmd FileType c set omnifunc=ccomplete#Complete
 
-let g:vimclojure#ParenRainbow = 1
-let g:vimclojure#HighlightBuiltins = 1
-let g:vimclojure#DynamicHighlighting = 1
+" PHP
+let php_sql_query=1                                                                                        
+let php_htmlInStrings=1
+au BufRead,BufNewFile *.php set ft=php.html
 
 " Omnicomplete prefers longest match first
 set completeopt=menu,menuone,preview,longest
@@ -75,8 +81,40 @@ let g:SuperTabDefaultCompletionType = 'context'
 let g:SuperTabContextDefaultCompletionType = '<c-x><c-o>'
 let g:SuperTabClosePreviewOnPopupClose = 1
 
+" Vimclojure plugin
+let g:vimclojure#ParenRainbow = 1
+let g:vimclojure#HighlightBuiltins = 1
+let g:vimclojure#DynamicHighlighting = 1
+
+" NERDTree plugin
+let NERDTreeQuitOnOpen = 1
+let NERDTreeDirArrows = 1
+let NERDTreeMinimalUI = 1
+
+" Tagbar
+let g:tagbar_autoclose = 1
+let g:tagbar_compact = 1
+
 " MAPPINGS                                                                    "
 map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
+map <silent> <f1> :NERDTreeToggle<cr>
+map <silent> <f2> :TagbarToggle<cr>
+"vimdiff current vs git head (fugitive extension)
+nnoremap <Leader>gd :Gdiff<cr> 
+"switch back to current file and closes fugitive buffer
+nnoremap <Leader>gD :diffoff!<cr><c-w>h:bd<cr>
+
+" Add the virtualenv's site-packages to vim path
+py << EOF
+import os.path
+import sys
+import vim
+if 'VIRTUAL_ENV' in os.environ:
+    project_base_dir = os.environ['VIRTUAL_ENV']
+    sys.path.insert(0, project_base_dir)
+    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+    execfile(activate_this, dict(__file__=activate_this))
+EOF
