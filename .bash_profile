@@ -14,7 +14,7 @@ alias l="/bin/ls -FG"
 alias ls="/bin/ls -laFG"
 alias vim="reattach-to-user-namespace -l vim"
 
-export PATH="/usr/local/share/python:/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="/usr/texbin:/usr/local/share/python:/usr/local/bin:/usr/local/sbin:$PATH"
 export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
 
 if [ -f `brew --prefix`/etc/bash_completion ]; then
