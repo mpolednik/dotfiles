@@ -33,6 +33,19 @@
 :f
 :%s
 :q
+:!mplayer %f
+:!mplayer %f &
+:!vim ~/.vifm/vifmrc
+:cd /Volumes/
+:cd /Applications/
+:!open
+:!open %f
+:cd ~
+:touch .vimperatorrc
+:!oascript -e "set Volume 20"
+:!git add *
+:?git status
+:!git status
 
 # Search history (oldest to newest):
 /celeste
@@ -40,10 +53,15 @@
 /vim
 /dropbox
 /Celeste
+/firefox
+/vimperator
 
 # Prompt history (oldest to newest):
 pmain.py
+pa
 
 # Trash content:
 t000_tags
 	/Users/mpolednik/.vifm/doc/tags
+t000_.slate
+	/Users/mpolednik/Documents/dotfiles/.slate
