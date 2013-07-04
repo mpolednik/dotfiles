@@ -100,3 +100,5 @@ check_hash = yes
 # before forcing. Overworked systems might need lower values to get a
 # decent hash checking rate.
 #hash_max_tries = 10
+
+#http_proxy=77.104.227.62

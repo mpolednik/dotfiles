@@ -1,0 +1,90 @@
+" You can edit this file by hand.
+" The " character at the beginning of a line comments out the line.
+" Blank lines are ignored.
+
+" The Default color scheme is used for any directory that does not have
+" a specified scheme and for parts of user interface like menus. A
+" color scheme set for a base directory will also
+" be used for the sub directories.
+
+" The standard ncurses colors are:
+" Default = -1 = None, can be used for transparency or default color
+" Black = 0
+" Red = 1
+" Green = 2
+" Yellow = 3
+" Blue = 4
+" Magenta = 5
+" Cyan = 6
+" White = 7
+
+" Light versions of colors are also available (set bold attribute):
+" LightBlack
+" LightRed
+" LightGreen
+" LightYellow
+" LightBlue
+" LightMagenta
+" LightCyan
+" LightWhite
+
+" Available attributes (some of them can be combined):
+" bold
+" underline
+" reverse or inverse
+" standout
+" none
+
+" Vifm supports 256 colors you can use color numbers 0-255
+" (requires properly set up terminal: set your TERM environment variable
+" (directly or using resources) to some color terminal name (e.g.
+" xterm-256color) from /usr/lib/terminfo/; you can check current number
+" of colors in your terminal with tput colors command)
+
+" highlight group cterm=attrs ctermfg=foreground_color ctermbg=background_color
+
+" Hemisu
+" let s:black=           { "gui": "#000000", "cterm": "16"  }
+" let s:white=           { "gui": "#FFFFFF", "cterm": "231" }
+" let s:almostWhite=     { "gui": "#EEEEEE", "cterm": "255" }
+" let s:almostBlack=     { "gui": "#111111", "cterm": "233" }
+" let s:middleDarkGrey=  { "gui": "#777777", "cterm": "241" }
+" let s:middleLightGrey= { "gui": "#999999", "cterm": "246" }
+" let s:lightGrey=       { "gui": "#BBBBBB", "cterm": "249" }
+" let s:darkGrey=        { "gui": "#444444", "cterm": "238" }
+" 
+" let s:darkPink=        { "gui": "#63001C", "cterm": "88"  }
+" let s:middleDarkPink=  { "gui": "#FF0055", "cterm": "197" }
+" let s:middleLightPink= { "gui": "#D65E76", "cterm": "167" }
+" let s:lightPink=       { "gui": "#FFAFAF", "cterm": "217" }
+" 
+" let s:darkBlue=        { "gui": "#005F87", "cterm": "24"  }
+" let s:middleDarkBlue=  { "gui": "#538192", "cterm": "24"  }
+" let s:middleLightBlue= { "gui": "#9FD3E6", "cterm": "116" }
+" let s:lightBlue=       { "gui": "#CBE4EE", "cterm": "195" }
+" 
+" let s:darkGreen=       { "gui": "#5F5F00", "cterm": "58"  }
+" let s:middleDarkGreen= { "gui": "#739200", "cterm": "64"  }
+" let s:middleLightGreen={ "gui": "#B1D631", "cterm": "149" }
+" let s:lightGreen=      { "gui": "#BBFFAA", "cterm": "157" }
+" 
+" let s:darkTan=         { "gui": "#503D15", "cterm": "52"  }
+" let s:lightTan=        { "gui": "#ECE1C8", "cterm": "230" }
+
+highlight Win cterm=none ctermfg=255 ctermbg=16
+highlight Directory cterm=bold ctermfg=116 ctermbg=default
+highlight Link cterm=bold ctermfg=yellow ctermbg=default
+highlight BrokenLink cterm=bold ctermfg=red ctermbg=default
+highlight Socket cterm=bold ctermfg=169 ctermbg=default
+highlight Device cterm=bold ctermfg=red ctermbg=default
+highlight Fifo cterm=bold ctermfg=cyan ctermbg=default
+highlight Executable cterm=bold ctermfg=149 ctermbg=default
+highlight Selected cterm=bold ctermfg=magenta ctermbg=default
+highlight CurrLine cterm=bold ctermfg=-1 ctermbg=241
+highlight TopLine cterm=none ctermfg=255 ctermbg=16
+highlight TopLineSel cterm=bold ctermfg=-1 ctermbg=default
+highlight StatusLine cterm=bold ctermfg=255 ctermbg=233
+highlight WildMenu cterm=underline,reverse ctermfg=white ctermbg=-1
+highlight CmdLine cterm=none ctermfg=white ctermbg=-1
+highlight ErrorMsg cterm=none ctermfg=red ctermbg=-1
+highlight Border cterm=none ctermfg=-1 ctermbg=16

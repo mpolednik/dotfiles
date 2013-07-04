@@ -1,0 +1,49 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Bookmarks:
+
+# Command line history (oldest to newest):
+:jobs
+:man jobs
+:help cd
+:help jobs
+:help vifm-%i
+:help ls
+:help %f
+:help vifm-$
+:help
+:wq
+:help vifm-!!
+:cd ~/Documents/
+:touch test2.py
+:chmod +x %f
+:chmod +x %F
+:! %f
+:run
+:runexec
+:s
+:!python test2.py
+:mkdir rh_ilv_task
+:mv t
+:mv test.py main.py
+:!killall mplayer
+:touch test.sh
+:chmod +x
+:!test.sh
+:f
+:%s
+:q
+
+# Search history (oldest to newest):
+/celeste
+/Cele
+/vim
+/dropbox
+/Celeste
+
+# Prompt history (oldest to newest):
+pmain.py
+
+# Trash content:
+t000_tags
+	/Users/mpolednik/.vifm/doc/tags
