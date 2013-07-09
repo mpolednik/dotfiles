@@ -7,3 +7,4 @@ color   message     color255 color16
 color   attachment  color149 color16
 color   tree	    color167 default
 color   markers	    color167 color16
+color   search      color16 color149
