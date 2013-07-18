@@ -73,13 +73,16 @@ let php_htmlInStrings=1
 au BufRead,BufNewFile *.php set ft=php.html
 
 " Omnicomplete prefers longest match first
-set completeopt=menu,menuone,preview,longest
+set completeopt=longest,menu,menuone,preview
 
 " PLUGINS                                                                     "
 " Supertab plugin
 let g:SuperTabDefaultCompletionType = 'context'
-let g:SuperTabContextDefaultCompletionType = '<c-x><c-o>'
+let g:SuperTabContextDefaultCompletionType = '<c-x><c-n>'
 let g:SuperTabClosePreviewOnPopupClose = 1
+let g:SuperTabLongestEnhanced = 1
+let g:SuperTabMappingTabLiteral = '<c-v><tab>'
+let g:SuperTabLongestHighlight = 1
 
 " Vimclojure plugin
 let g:vimclojure#ParenRainbow = 1
