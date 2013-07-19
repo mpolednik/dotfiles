@@ -67,6 +67,8 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP keywordprg=pman
 autocmd FileType c set omnifunc=ccomplete#Complete
 
+set tags=./tags,tags;$HOME
+
 " PHP
 let php_sql_query=1                                                                                        
 let php_htmlInStrings=1
