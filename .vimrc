@@ -22,6 +22,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
 Bundle 'majutsushi/tagbar'
 Bundle 'davidhalter/jedi-vim'
+Bundle 'vim-scripts/Python-Syntax-Folding'
 
 " General
 let mapleader = "_"
@@ -57,6 +58,7 @@ set showmatch " Jump to matching bracket
 set matchtime=2 " stay for 2 seconds
 set showtabline=1 " Always show tabline
 set cursorline
+set foldmethod=syntax
 
 " OMNICOMPLETE, SYNTAX SPECIFIC                                               "
 autocmd FileType python set omnifunc=pythoncomplete#Complete
@@ -111,6 +113,8 @@ map <silent> <f2> :TagbarToggle<cr>
 nnoremap <Leader>gd :Gdiff<cr> 
 "switch back to current file and closes fugitive buffer
 nnoremap <Leader>gD :diffoff!<cr><c-w>h:bd<cr>
+nnoremap <space> za
+vnoremap <space> zf
 
 " Add the virtualenv's site-packages to vim path
 py << EOF
