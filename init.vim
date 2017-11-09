@@ -11,6 +11,7 @@ Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.local/nvim/plugged/gocode/vim/symli
 Plug 'zchee/deoplete-go'
 Plug 'zchee/deoplete-jedi'
 Plug 'mpolednik/klean'
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 " General
@@ -50,7 +51,7 @@ set showtabline=1 " Always show tabline
 set cursorline
 set foldmethod=syntax
 
-set spell spelllang=en_us
+" set spell spelllang=en_us
 
 " OMNICOMPLETE, SYNTAX SPECIFIC                                               "
 autocmd FileType python set omnifunc=pythoncomplete#CompletePython
@@ -73,10 +74,21 @@ let g:go_highlight_types = 1
 
 let g:deoplete#enable_at_startup = 1
 
-:let mapleader = "\\"
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+let g:NERDTreeQuitOnOpen = 1
+let g:NERDTreeWinSize = 60
+nmap <F1> :NERDTreeToggle<CR>
+
+
+let mapleader = "\\"
 
 " MAPPINGS                                                                    "
 inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : deoplete#mappings#manual_complete()
+nnoremap <C-p> :FZF<CR>
+nmap <F2> :GoCallers<CR>
+nmap <F3> :GoImplements<CR>
 
 autocmd FileType gitcommit setlocal cc=70
 autocmd FileType gitcommit setlocal tw=70
