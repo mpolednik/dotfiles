@@ -10,12 +10,15 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.local/nvim/plugged/gocode/vim/symlink.sh' }
 Plug 'zchee/deoplete-go'
 Plug 'zchee/deoplete-jedi'
+Plug 'davidhalter/jedi-vim'
 Plug 'mpolednik/klean'
-Plug 'scrooloose/nerdtree'
+Plug 'python-mode/python-mode', {'branch': 'develop'}
+Plug 'Vimjas/vim-python-pep8-indent'
+
 call plug#end()
 
 " General
-let mapleader = "_"
+let mapleader = ","
 set ignorecase smartcase " Search ignores case if everything is
 " lowercase, use  case-sensitive matching otherwise
 set expandtab " Only visual tabs
@@ -50,17 +53,7 @@ set matchtime=2 " stay for 2 seconds
 set showtabline=1 " Always show tabline
 set cursorline
 set foldmethod=syntax
-
-" set spell spelllang=en_us
-
-" OMNICOMPLETE, SYNTAX SPECIFIC                                               "
-autocmd FileType python set omnifunc=pythoncomplete#CompletePython
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP keywordprg=pman
-autocmd FileType c set omnifunc=ccomplete#Complete
+set maxmempattern=50000
 
 set tags=./tags,tags;$HOME
 
@@ -69,26 +62,20 @@ set completeopt=longest,menu,menuone,preview
 
 " PLUGINS                                                                     "
 let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_types = 1
+let g:go_autodetect_gopath = 0
 
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
 
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
-let g:NERDTreeQuitOnOpen = 1
-let g:NERDTreeWinSize = 60
-nmap <F1> :NERDTreeToggle<CR>
-
+let g:jedi#completions_enabled = 0
 
 let mapleader = "\\"
 
 " MAPPINGS                                                                    "
-inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : deoplete#mappings#manual_complete()
 nnoremap <C-p> :FZF<CR>
-nmap <F2> :GoCallers<CR>
-nmap <F3> :GoImplements<CR>
 
 autocmd FileType gitcommit setlocal cc=70
 autocmd FileType gitcommit setlocal tw=70
@@ -99,5 +86,30 @@ set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim/
 
 let g:python2_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
+let g:pymode_python = 'python3' 
 
 autocmd InsertLeave * if pumvisible() == 0 | pclose | endif
+
+let g:centerinscreen_active = 0
+
+function! ToggleCenterInScreen(desired_width)
+    if g:centerinscreen_active == 0
+        let l:window_width = winwidth(winnr())
+        let l:sidepanel_width = (l:window_width - a:desired_width) / 2
+
+        exec("silent leftabove " . l:sidepanel_width . "vsplit -")
+        wincmd l
+        exec("silent rightbelow " . l:sidepanel_width . "vsplit -")
+        wincmd h
+        let g:centerinscreen_active = 1
+    else
+        wincmd h
+        close
+        wincmd l
+        close
+        
+        let g:centerinscreen_active = 0
+    endif
+endfunction
+
+nnoremap <C-h> :exec ToggleCenterInScreen(100)<CR>
