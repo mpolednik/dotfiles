@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=~/.oh-my-zsh
+export ZSH=/Users/mpolednik/.oh-my-zsh
 
 # Allow advanced completion system.
 autoload -U compinit
@@ -91,12 +91,12 @@ set -m vi-insert "\C-l":clear-screen
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias python="ipython"
 alias vim="nvim"
-alias sync="~/sync.sh"
+alias sync="~/Projects/src/github.com/mpolednik/shellhelpers/sync.sh"
 
 bindkey "^R" history-incremental-search-backward
 
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -n "$NVIM_LISTEN_ADDRESS" ] && export FZF_DEFAULT_OPTS='--no-height'
