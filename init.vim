@@ -1,24 +1,25 @@
-" Bundles
+"" Bundles
 set nocompatible " Do not try to be compatible with vi
-
+"
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'https://github.com/fatih/vim-go'
 Plug 'tpope/vim-fugitive'
-Plug 'techlivezheng/vim-plugin-minibufexpl'
+"Plug 'techlivezheng/vim-plugin-minibufexpl'
+Plug 'ap/vim-buftabline'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.local/nvim/plugged/gocode/vim/symlink.sh' }
 Plug 'zchee/deoplete-go'
 Plug 'zchee/deoplete-jedi'
 Plug 'davidhalter/jedi-vim'
 Plug 'mpolednik/klean'
+Plug 'scrooloose/nerdtree'
 Plug 'python-mode/python-mode', {'branch': 'develop'}
 Plug 'Vimjas/vim-python-pep8-indent'
-
+"
 call plug#end()
-
+"
 " General
-let mapleader = ","
 set ignorecase smartcase " Search ignores case if everything is
 " lowercase, use  case-sensitive matching otherwise
 set expandtab " Only visual tabs
@@ -72,10 +73,18 @@ let g:deoplete#enable_smart_case = 1
 
 let g:jedi#completions_enabled = 0
 
+let g:buftabline_numbers = 1
+let g:buftabline_show = 2
+
 let mapleader = "\\"
 
 " MAPPINGS                                                                    "
 nnoremap <C-p> :FZF<CR>
+
+map <C-j> :bnext<CR>
+map <C-k> :bprev<CR>
+
+map <F1> :NERDTreeToggle<CR>
 
 autocmd FileType gitcommit setlocal cc=70
 autocmd FileType gitcommit setlocal tw=70
@@ -89,6 +98,7 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 let g:pymode_python = 'python3' 
 
 autocmd InsertLeave * if pumvisible() == 0 | pclose | endif
+autocmd TermOpen * set bufhidden=hide
 
 let g:centerinscreen_active = 0
 
