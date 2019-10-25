@@ -1,0 +1,96 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "cmd+r",
+        "command": "workbench.action.openRecent"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "-workbench.action.openRecent"
+    },
+    {
+        "key": "shift+alt+cmd+[",
+        "command": "extension.vim_ctrl+[",
+        "when": "editorTextFocus && vim.active && vim.use<C-[> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+[",
+        "command": "-extension.vim_ctrl+[",
+        "when": "editorTextFocus && vim.active && vim.use<C-[> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+[",
+        "command": "references-view.find",
+        "when": "editorHasReferenceProvider"
+    },
+    {
+        "key": "shift+alt+f12",
+        "command": "-references-view.find",
+        "when": "editorHasReferenceProvider"
+    },
+    {
+        "key": "f4",
+        "command": "-references-view.next",
+        "when": "reference-list.hasResult"
+    },
+    {
+        "key": "shift+f4",
+        "command": "-references-view.prev",
+        "when": "reference-list.hasResult"
+    },
+    {
+        "key": "f1",
+        "command": "-workbench.action.showCommands"
+    },
+    {
+        "key": "f1",
+        "command": "workbench.files.action.focusOpenEditorsView",
+        "when": "workbench.explorer.openEditorsView.active"
+    },
+    {
+        "key": "cmd+k e",
+        "command": "-workbench.files.action.focusOpenEditorsView",
+        "when": "workbench.explorer.openEditorsView.active"
+    },
+    {
+        "key": "f1",
+        "command": "workbench.view.explorer"
+    },
+    {
+        "key": "shift+cmd+e",
+        "command": "-workbench.view.explorer"
+    },
+    {
+        "key": "shift+cmd+j",
+        "command": "search.action.focusNextSearchResult",
+        "when": "hasSearchResult"
+    },
+    {
+        "key": "f4",
+        "command": "-search.action.focusNextSearchResult",
+        "when": "hasSearchResult"
+    },
+    {
+        "key": "shift+cmd+k",
+        "command": "search.action.focusPreviousSearchResult",
+        "when": "hasSearchResult"
+    },
+    {
+        "key": "shift+f4",
+        "command": "-search.action.focusPreviousSearchResult",
+        "when": "hasSearchResult"
+    },
+    {
+        "key": "f2",
+        "command": "-editor.action.rename",
+        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "f2",
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+    {
+        "key": "ctrl+`",
+        "command": "-workbench.action.terminal.toggleTerminal"
+    }
+]

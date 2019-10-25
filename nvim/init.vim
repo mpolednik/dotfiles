@@ -49,6 +49,7 @@ set relativenumber " Line numbers
 set nowrap " No wrapped lines
 set statusline=%F%m%r%h%w\ [%L]\ [%p%%]\ [%l,%v]
 set statusline+=%{fugitive#statusline()}
+set statusline+=%*
 set showmatch " Jump to matching bracket
 set matchtime=2 " stay for 2 seconds
 set showtabline=1 " Always show tabline
@@ -93,10 +94,13 @@ autocmd FileType mail setlocal tw=76
 
 set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim/
 
-let g:python2_host_prog = '/usr/local/bin/python'
+let g:ruby_host_prog = '/usr/local/opt/ruby/bin/ruby'
+let g:python2_host_prog = '/usr/local/bin/python2'
 let g:python3_host_prog = '/usr/local/bin/python3'
 let g:pymode_python = 'python3' 
 
+" (Optional)Hide Info(Preview) window after completions
+autocmd CursorMovedI * if pumvisible() == 0 | pclose | endif
 autocmd InsertLeave * if pumvisible() == 0 | pclose | endif
 autocmd TermOpen * set bufhidden=hide
 
@@ -122,4 +126,4 @@ function! ToggleCenterInScreen(desired_width)
     endif
 endfunction
 
-nnoremap <C-h> :exec ToggleCenterInScreen(100)<CR>
+nnoremap <C-l> :exec ToggleCenterInScreen(100)<CR>
